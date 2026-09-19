@@ -1,0 +1,1048 @@
+/* Modern Font Setup */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+:root {
+  --primary-color: #1772d0;
+  --secondary-color: #f09228;
+  --text-color: #333;
+  --light-gray: #f5f5f5;
+  --border-color: #e0e0e0;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+  
+  /* Adjusted scale factor */
+  --scale-factor: 0.85;
+}
+
+/* Center the entire page */
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+  color: var(--text-color);
+  font-family: 'Open Sans', 'Lato', Verdana, Helvetica, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  zoom: var(--scale-factor);
+  margin: 0 auto;
+}
+
+.main-table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+  margin: 0 auto;
+}
+
+/* 去掉全局链接的下划线并使用自定义颜色 */
+a {
+  text-decoration: none;
+  color: var(--primary-color); /* 使用你定义的主色 */
+  transition: color 0.3s ease;
+}
+
+/* 鼠标悬停时加一个交互效果 */
+a:hover {
+  color: var(--secondary-color); /* 悬停时换颜色 */
+  text-decoration: underline; /* 如果你想悬停时才显示下划线，可以保留 */
+}
+
+/* Header Section */
+.header-table {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.profile-text {
+  padding: 2.5%;
+  width: 63%;
+  vertical-align: middle;
+}
+
+.profile-img {
+  padding: 2.5%;
+  width: 30%;
+  vertical-align: middle;
+  max-width: 40%;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin: 10px 0 20px;
+  color: #222;
+}
+
+.profile-text p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.img-container {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.img-container:hover {
+  transform: translateY(-5px);
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: fit-content;
+  gap: 10px;
+  text-align: center;
+  margin: 25px auto 0;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0;
+  padding: 6px 10px;
+  font-size: 14px;
+  white-space: nowrap;
+  background-color: var(--light-gray);
+  border-radius: 30px;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.social-links a:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(23, 114, 208, 0.2);
+}
+
+.social-links a i {
+  margin-right: 6px;
+}
+
+/* Section Headers */
+.section {
+  padding: 15px 0;
+  margin: 30px 0 20px;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.section h2 i {
+  margin-right: 12px;
+  color: var(--primary-color);
+}
+
+/* News Section */
+.news {
+  margin-bottom: 25px;
+}
+
+.news-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.news-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 15px;
+}
+
+.news-list li:last-child {
+  border-bottom: none;
+}
+
+.news-date {
+  display: inline-block;
+  min-width: 72px;
+  font-weight: 700;
+  color: #222;
+}
+
+.news-dot {
+  display: inline-block;
+  margin: 0 10px;
+  color: #999;
+}
+
+/* Misc Section */
+.misc {
+  margin-bottom: 25px;
+}
+
+.misc-subtitle {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+}
+
+.misc-bullets {
+  margin: 0 0 25px;
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.misc-bullets li {
+  margin: 6px 0;
+}
+
+/* The widget sizes itself from this container's width (map.js reads
+   parent().width() when w=a and sets height = w / 2.04), so scale the
+   map by scaling .visitor-stats. */
+.visitor-stats {
+  display: block;
+  width: 50%;
+  min-width: 260px;
+  max-width: 100%;
+  margin: 8px auto 24px;
+}
+
+.visitor-stats #clustrmaps-widget,
+.visitor-stats #mapmyvisitors-widget {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.visitor-stats #clustrmaps-widget canvas,
+.visitor-stats #clustrmaps-widget iframe,
+.visitor-stats #clustrmaps-widget img,
+.visitor-stats #mapmyvisitors-widget canvas,
+.visitor-stats #mapmyvisitors-widget iframe,
+.visitor-stats #mapmyvisitors-widget img {
+  max-width: 100% !important;
+}
+
+/* Research Section - Improved Image Hover Effect */
+.research-table {
+  width: 100%;
+  margin-bottom: 30px;
+  border-spacing: 0;
+}
+
+/* Don't show divider after the last research item */
+.research-table tbody.research-item:last-child {
+  border-bottom: none;
+}
+
+.research-table tbody.research-item {
+  /* Minimal separation between projects */
+  border-bottom: 1px solid var(--border-color);
+}
+
+.research-table tbody.research-item > tr {
+  width: 100%;
+}
+
+.research-table tbody.research-item.highlight {
+  /* Use a very subtle cue for co-first/first author items */
+  border-bottom-color: rgba(23, 114, 208, 0.35);
+}
+
+/* Background highlight (avoid "loading bar" look) */
+.research-table tbody.research-item.highlight td {
+  background: rgba(23, 114, 208, 0.05);
+}
+
+.research-img {
+  padding: 20px;
+  width: 30%;
+  vertical-align: middle;
+}
+
+.img-hover-container {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: none;
+  aspect-ratio: 230/165; /* Maintain original aspect ratio */
+  background: #f8f8f8;
+}
+
+.img-hover-container:hover {
+  transform: none;
+}
+
+.img-hover-container .static-img,
+.img-hover-container .animated-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-hover-container .static-img {
+  opacity: 1;
+}
+
+.img-hover-container .animated-img {
+  opacity: 0;
+}
+
+/* Only fade the static image out when there is actually an .animated-img
+   underneath to reveal. Without the :has() guard, hovering a card that has
+   no hover GIF fades the figure into the blank container background. */
+.img-hover-container:has(.animated-img):hover .static-img {
+  opacity: 0;
+}
+
+.img-hover-container:hover .animated-img {
+  opacity: 1;
+}
+
+.img-hover-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Fit original shape */
+  display: block;
+}
+
+/* Wide teaser figures: match the image's own aspect ratio so nothing is letterboxed.
+   Current value = images/tau0/teaser.png (1400x667). */
+.release-teaser {
+  aspect-ratio: 1400/667;
+  background: #ffffff;
+}
+
+.research-details {
+  padding: 20px;
+  width: 70%;
+  vertical-align: middle;
+}
+
+.badges {
+  margin: 2px 0 0;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+}
+
+.badge-highlight {
+  color: #0f4f96;
+}
+
+.research-details h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: #222;
+}
+
+.research-details h3 a {
+  color: #222;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.research-details h3 a:hover {
+  color: var(--primary-color);
+}
+
+.authors {
+  margin: 10px 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.authors strong {
+  font-weight: 700;
+}
+
+.pub-info {
+  margin: 10px 0;
+  font-style: italic;
+  color: #555;
+}
+
+.links {
+  margin: 15px 0;
+}
+
+.links a {
+  display: inline-block;
+  margin-right: 12px;
+  padding: 0;
+  background-color: transparent;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.links a i {
+  margin-right: 6px;
+}
+
+.research-details p {
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+/* Experience Section - Simplified Logo */
+.experience-table {
+  width: 100%;
+  border-spacing: 0;
+  margin-bottom: 30px;
+}
+
+.logo-cell {
+  padding: 20px;
+  width: 20%;
+  vertical-align: top;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px; /* Increased height */
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.logo-container img {
+  max-height: 100px; /* Larger size */
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.exp-details {
+  padding: 20px;
+  width: 80%;
+  vertical-align: top;
+}
+
+.exp-details h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 5px;
+  color: #222;
+}
+
+.exp-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 15px;
+}
+
+.exp-details p {
+  margin: 8px 0;
+}
+
+/* Footer */
+.footer {
+  text-align: right;
+  font-size: 14px;
+  color: #777;
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer a {
+  color: #555;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) and (min-width: 769px) {
+  .page-wrapper {
+    padding: 30px;
+  }
+  
+  .container {
+    transform: scale(0.95);
+  }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+  .page-wrapper {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .container {
+    transform: scale(0.75);
+    transform-origin: top center;
+    width: 133.33%; /* Compensate for scale to maintain full width */
+  }
+  
+  .header-table {
+    display: table;
+    width: 100%;
+  }
+  
+  .profile-text {
+    width: 60%;
+    display: table-cell;
+    padding: 1.5% 10px;
+    vertical-align: middle;
+  }
+  
+  .profile-img {
+    width: 35%;
+    display: table-cell;
+    padding: 1.5% 10px;
+    vertical-align: middle;
+    max-width: 35%;
+  }
+  
+  h1 {
+    font-size: 26px;
+    margin: 3px 0 10px;
+  }
+  
+  .profile-text p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .social-links {
+    margin-top: 10px;
+  }
+  
+  .social-links a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+  
+  .social-links a i {
+    margin-right: 5px;
+    font-size: 13px;
+  }
+  
+  .section {
+    margin: 15px 0 10px;
+    padding: 8px 0;
+  }
+  
+  .section h2 {
+    font-size: 19px;
+  }
+  
+  .section h2 i {
+    margin-right: 8px;
+    font-size: 17px;
+  }
+  
+  .research-table {
+    display: table;
+    width: 100%;
+  }
+  
+  .research-table tbody.research-item > tr {
+    display: table-row;
+  }
+  
+  .research-img {
+    width: 45%;
+    display: table-cell;
+    padding: 8px;
+    vertical-align: middle;
+  }
+  
+  .research-details {
+    width: 55%;
+    display: table-cell;
+    padding: 8px;
+    vertical-align: middle;
+  }
+  
+  .img-hover-container {
+    max-width: 100%;
+    margin: 0;
+    transform: none;
+  }
+
+  /* Keep research highlight subtle on mobile as well */
+  .research-table tbody.research-item.highlight td {
+    background: rgba(23, 114, 208, 0.05);
+  }
+  
+  .experience-table {
+    display: table;
+    width: 100%;
+  }
+  
+  .experience-table tbody > tr {
+    display: table-row;
+  }
+  
+  .logo-cell {
+    width: 12%;
+    display: table-cell;
+    padding: 8px 10px;
+    vertical-align: middle;
+  }
+  
+  .exp-details {
+    width: 88%;
+    display: table-cell;
+    padding: 8px 10px;
+    vertical-align: middle;
+  }
+  
+  .exp-meta {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 13px;
+  }
+  
+  .logo-container {
+    height: 100px;
+    width: 100%;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-container img {
+    max-height: 75px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .research-details h3 {
+    font-size: 17px;
+    margin: 0 0 6px;
+  }
+  
+  .authors {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+  
+  .pub-info {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+  
+  .links {
+    margin: 10px 0;
+  }
+  
+  .links a {
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  
+  .research-details p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .news-list li {
+    font-size: 14px;
+    padding: 5px 0;
+  }
+  
+  .exp-details h3 {
+    font-size: 17px;
+    margin: 0 0 3px;
+  }
+  
+  .exp-details p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  .misc {
+    margin-bottom: 15px;
+  }
+  
+  .misc p {
+    font-size: 14px;
+  }
+  
+  .misc-bullets {
+    font-size: 14px;
+    padding-left: 15px;
+    margin: 0 0 15px;
+  }
+  
+  .misc-bullets li {
+    margin: 4px 0;
+  }
+  
+  .misc-subtitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-wrapper {
+    padding: 0 !important;
+  }
+  
+  .container {
+    transform: scale(0.9);
+    transform-origin: top center;
+    width: 111.11%; /* Compensate for scale to maintain full width */
+  }
+  
+  .profile-text {
+    padding: 1% 8px;
+  }
+  
+  .profile-img {
+    padding: 1% 8px;
+  }
+  
+  .research-img {
+    padding: 8px;
+  }
+  
+  .research-details {
+    padding: 8px;
+  }
+  
+  .logo-cell {
+    padding: 8px;
+  }
+  
+  .exp-details {
+    padding: 8px;
+  }
+  
+  .section {
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 12px 0 8px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  
+  .news {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  .misc {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  .footer {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin: 3px 0 10px;
+  }
+  
+  .profile-text p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .social-links {
+    margin-top: 10px;
+  }
+  
+  .social-links a {
+    margin: 0 4px;
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+  
+  .social-links a i {
+    margin-right: 4px;
+    font-size: 13px;
+  }
+  
+  .section h2 {
+    font-size: 19px;
+  }
+  
+  .section h2 i {
+    margin-right: 6px;
+    font-size: 17px;
+  }
+  
+  .experience-table {
+    display: table;
+    width: 100%;
+  }
+  
+  .experience-table tbody > tr {
+    display: table-row;
+  }
+  
+  .logo-cell {
+    width: 12%;
+    display: table-cell;
+    padding: 6px 8px;
+    vertical-align: middle;
+  }
+  
+  .exp-details {
+    width: 88%;
+    display: table-cell;
+    padding: 6px 8px;
+    vertical-align: middle;
+  }
+  
+  .exp-meta {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 13px;
+  }
+  
+  .logo-container {
+    height: 90px;
+    width: 100%;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-container img {
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .research-table {
+    display: table;
+    width: 100%;
+  }
+  
+  .research-table tbody.research-item > tr {
+    display: table-row;
+  }
+  
+  .research-img {
+    width: 45%;
+    display: table-cell;
+    padding: 8px;
+    vertical-align: middle;
+  }
+  
+  .research-details {
+    width: 55%;
+    display: table-cell;
+    padding: 8px;
+    vertical-align: middle;
+  }
+  
+  .img-hover-container {
+    max-width: 100%;
+    margin: 0;
+    transform: none;
+  }
+  
+  .research-details h3 {
+    font-size: 17px;
+    margin: 0 0 6px;
+  }
+  
+  .authors {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+  
+  .pub-info {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+  
+  .links {
+    margin: 10px 0;
+  }
+  
+  .links a {
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  
+  .research-details p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .news-list li {
+    font-size: 14px;
+    padding: 5px 0;
+  }
+  
+  .exp-details h3 {
+    font-size: 17px;
+    margin: 0 0 3px;
+  }
+  
+  .exp-details p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  .misc {
+    margin-bottom: 15px;
+  }
+  
+  .misc p {
+    font-size: 14px;
+  }
+  
+  .misc-bullets {
+    font-size: 14px;
+    padding-left: 15px;
+    margin: 0 0 15px;
+  }
+  
+  .misc-bullets li {
+    margin: 4px 0;
+  }
+  
+  .misc-subtitle {
+    font-size: 14px;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Additions for this site (not part of the original template)
+   --------------------------------------------------------------- */
+
+/* Orange call-out line in the bio (e.g. "seeking a Ph.D. position").
+   Uses the template's own accent colour so it stands out without
+   clashing with the blue links. */
+.highlight-note {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* WeChat QR pop-up. Pure CSS via :target — no JavaScript.
+   Hidden by default; shown when the URL hash matches its id. */
+.qr-modal {
+  display: none;
+}
+
+.qr-modal:target {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Full-bleed click target that closes the pop-up */
+.qr-backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.55);
+  cursor: default;
+}
+
+.qr-card {
+  position: relative;
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  max-width: 90vw;
+}
+
+.qr-card img {
+  display: block;
+  width: 260px;
+  max-width: 70vw;
+  height: auto;
+  margin: 0 auto;
+}
+
+.qr-card p {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.qr-dismiss {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  font-size: 22px;
+  line-height: 1;
+  color: #999;
+  text-decoration: none;
+}
+
+.qr-dismiss:hover {
+  color: #333;
+}
