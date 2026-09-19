@@ -1,14 +1,24 @@
 /* Modern Font Setup */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap');
 
+/* -----------------------------------------------------------------
+   Palette: burgundy + steel blue.
+   --primary-color   links, section icons, headings on hover
+   --secondary-color accent bar, link hover, the call-out line
+   Change these two and the whole page follows.
+   ----------------------------------------------------------------- */
 :root {
-  --primary-color: #1772d0;
-  --secondary-color: #f09228;
-  --text-color: #333;
-  --light-gray: #f5f5f5;
-  --border-color: #e0e0e0;
-  --shadow: 0 4px 12px rgba(0,0,0,0.08);
-  
+  --primary-color: #8c2f39;
+  --secondary-color: #43699e;
+  --text-color: #3c3534;
+  --heading-color: #262121;
+  --muted-color: #756b68;
+  --page-bg: #faf8f6;
+  --light-gray: #f5f2f0;
+  --border-color: #e9e1db;
+  --highlight-bg: #f7f1ef;
+  --shadow: 0 4px 14px rgba(60,40,38,0.09);
+
   /* Adjusted scale factor */
   --scale-factor: 0.85;
 }
@@ -24,7 +34,7 @@
 }
 
 body {
-  background-color: #fafafa;
+  background-color: var(--page-bg);
   color: var(--text-color);
   font-family: 'Open Sans', 'Lato', Verdana, Helvetica, sans-serif;
   line-height: 1.6;
@@ -85,7 +95,8 @@ h1 {
   font-weight: 700;
   text-align: center;
   margin: 10px 0 20px;
-  color: #222;
+  color: var(--heading-color);
+  letter-spacing: -0.01em;
 }
 
 .profile-text p {
@@ -94,8 +105,9 @@ h1 {
 }
 
 .img-container {
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
+  border: 1px solid var(--border-color);
   box-shadow: var(--shadow);
   transition: transform 0.3s ease;
 }
@@ -123,46 +135,65 @@ h1 {
 .social-links a {
   display: inline-block;
   margin: 0;
-  padding: 6px 10px;
+  padding: 7px 14px;
   font-size: 14px;
   white-space: nowrap;
-  background-color: var(--light-gray);
+  background-color: transparent;
+  border: 1px solid var(--border-color);
   border-radius: 30px;
   color: var(--primary-color);
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.25s ease;
+  box-shadow: none;
 }
 
 .social-links a:hover {
   background-color: var(--primary-color);
-  color: white;
+  border-color: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(23, 114, 208, 0.2);
+  box-shadow: 0 4px 10px rgba(140, 47, 57, 0.22);
 }
 
 .social-links a i {
   margin-right: 6px;
 }
 
-/* Section Headers */
+/* Section Headers
+   A hairline rule with a short accent tab at the left, instead of the
+   template's full-width heavy underline. */
 .section {
-  padding: 15px 0;
-  margin: 30px 0 20px;
-  border-bottom: 2px solid var(--primary-color);
+  position: relative;
+  padding: 0 0 12px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 54px;
+  height: 2px;
+  background: var(--secondary-color);
 }
 
 .section h2 {
-  font-size: 24px;
+  font-size: 23px;
   font-weight: 700;
-  color: #222;
+  color: var(--heading-color);
   margin: 0;
+  letter-spacing: -0.01em;
 }
 
 .section h2 i {
-  margin-right: 12px;
+  margin-right: 11px;
   color: var(--primary-color);
+  font-size: 0.84em;
+  vertical-align: 1px;
 }
 
 /* News Section */
@@ -177,7 +208,7 @@ h1 {
 }
 
 .news-list li {
-  padding: 8px 0;
+  padding: 10px 0;
   border-bottom: 1px solid var(--border-color);
   font-size: 15px;
 }
@@ -190,13 +221,16 @@ h1 {
   display: inline-block;
   min-width: 72px;
   font-weight: 700;
-  color: #222;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  color: var(--primary-color);
 }
 
 .news-dot {
   display: inline-block;
   margin: 0 10px;
-  color: #999;
+  color: var(--border-color);
 }
 
 /* Misc Section */
@@ -208,7 +242,7 @@ h1 {
   margin: 0 0 8px;
   font-size: 16px;
   font-weight: 700;
-  color: #222;
+  color: var(--heading-color);
 }
 
 .misc-bullets {
@@ -272,12 +306,16 @@ h1 {
 
 .research-table tbody.research-item.highlight {
   /* Use a very subtle cue for co-first/first author items */
-  border-bottom-color: rgba(23, 114, 208, 0.35);
+  border-bottom-color: var(--border-color);
 }
 
-/* Background highlight (avoid "loading bar" look) */
+/* Tinted panel plus a short accent edge, instead of a full-width wash */
 .research-table tbody.research-item.highlight td {
-  background: rgba(23, 114, 208, 0.05);
+  background: var(--highlight-bg);
+}
+
+.research-table tbody.research-item.highlight td:first-child {
+  border-left: 3px solid var(--secondary-color);
 }
 
 .research-img {
@@ -292,7 +330,7 @@ h1 {
   overflow: hidden;
   box-shadow: none;
   aspect-ratio: 230/165; /* Maintain original aspect ratio */
-  background: #f8f8f8;
+  background: #ffffff;
 }
 
 .img-hover-container:hover {
@@ -359,22 +397,22 @@ h1 {
   display: inline-block;
   font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: var(--muted-color);
 }
 
 .badge-highlight {
-  color: #0f4f96;
+  color: var(--primary-color);
 }
 
 .research-details h3 {
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 10px;
-  color: #222;
+  color: var(--heading-color);
 }
 
 .research-details h3 a {
-  color: #222;
+  color: var(--heading-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -396,7 +434,7 @@ h1 {
 .pub-info {
   margin: 10px 0;
   font-style: italic;
-  color: #555;
+  color: var(--muted-color);
 }
 
 .links {
@@ -467,14 +505,14 @@ h1 {
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 5px;
-  color: #222;
+  color: var(--heading-color);
 }
 
 .exp-meta {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  color: #666;
+  color: var(--muted-color);
   font-size: 15px;
 }
 
@@ -486,14 +524,14 @@ h1 {
 .footer {
   text-align: right;
   font-size: 14px;
-  color: #777;
+  color: var(--muted-color);
   padding-top: 30px;
   margin-top: 30px;
   border-top: 1px solid var(--border-color);
 }
 
 .footer a {
-  color: #555;
+  color: var(--muted-color);
   text-decoration: none;
 }
 
@@ -617,7 +655,7 @@ h1 {
 
   /* Keep research highlight subtle on mobile as well */
   .research-table tbody.research-item.highlight td {
-    background: rgba(23, 114, 208, 0.05);
+    background: var(--highlight-bg);
   }
   
   .experience-table {
@@ -774,6 +812,12 @@ h1 {
     margin: 12px 0 8px;
     padding-top: 6px;
     padding-bottom: 6px;
+  }
+
+  /* keep the accent tab aligned with the indented heading text */
+  .section::after {
+    left: 8px;
+    width: 44px;
   }
   
   .news {
@@ -971,9 +1015,9 @@ h1 {
    Additions for this site (not part of the original template)
    --------------------------------------------------------------- */
 
-/* Orange call-out line in the bio (e.g. "seeking a Ph.D. position").
-   Uses the template's own accent colour so it stands out without
-   clashing with the blue links. */
+/* Call-out line in the bio (e.g. "seeking a Ph.D. position").
+   Uses the steel-blue accent so it reads as a separate voice from the
+   burgundy links rather than competing with them. */
 .highlight-note {
   color: var(--secondary-color);
   font-weight: 600;
@@ -1030,7 +1074,7 @@ h1 {
 .qr-card p {
   margin: 12px 0 0;
   font-size: 13px;
-  color: #666;
+  color: var(--muted-color);
 }
 
 .qr-dismiss {
@@ -1039,10 +1083,10 @@ h1 {
   right: 12px;
   font-size: 22px;
   line-height: 1;
-  color: #999;
+  color: var(--muted-color);
   text-decoration: none;
 }
 
 .qr-dismiss:hover {
-  color: #333;
+  color: var(--primary-color);
 }
