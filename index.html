@@ -71,6 +71,7 @@
                       -->
                       <div class="social-links">
                         <a href="mailto:cba23@mails.tsinghua.edu.cn"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="https://github.com/bingaochen" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                         <a href="https://www.linkedin.com/in/bingao-chen/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
                         <a href="https://x.com/bingao_chen" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i> X</a>
                         <a href="#wechat"><i class="fab fa-weixin"></i> WeChat</a>
@@ -110,6 +111,7 @@
               <div class="news">
                 <ul class="news-list">
                   <!-- 新的在最上面。加一条就复制一个 <li>。 -->
+                  <li><span class="news-date">2026.09</span><span class="news-dot">•</span>📝 New blog post: <strong><a href="https://bingaochen.github.io/Astra-on-RoboMME/" target="_blank" rel="noopener noreferrer">Can Astra Solve RoboMME without Breaking the Bank?</a></strong></li>
                   <li><span class="news-date">2026.07</span><span class="news-dot">•</span>🛫 Our embodied foundation model <strong><a href="https://tau0-vla.github.io/" target="_blank" rel="noopener noreferrer">&tau;<sub>0</sub>-VLA</a></strong> has been released! Check out our long-horizon demos!</li>
                   <li><span class="news-date">2026.06</span><span class="news-dot">•</span>🌲 I joined <strong><a href="https://tml.stanford.edu/" target="_blank" rel="noopener noreferrer">The Movement Lab</a></strong> at Stanford University as a visiting student. Many thanks to <a href="https://guytevet.github.io/" target="_blank" rel="noopener noreferrer">Guy</a> and <a href="https://profiles.stanford.edu/c-karen-liu" target="_blank" rel="noopener noreferrer">Karen</a> for the opportunity!</li>
                   <li><span class="news-date">2026.06</span><span class="news-dot">•</span>🏆 Our team won <strong>1st Place</strong> in the <strong><a href="https://robomme.github.io/challenge.html" target="_blank" rel="noopener noreferrer">RoboMME Challenge</a></strong>, and I gave a contributed talk on our approach at the <a href="https://foundation-models-meet-embodied-agents.github.io/cvpr2026/" target="_blank" rel="noopener noreferrer">FMEA</a> workshop @ CVPR 2026.</li>
@@ -131,8 +133,43 @@
 
               <table class="research-table">
 
-                <!-- ---------- tau0-VLA ---------- -->
+                <!-- ---------- Astra on RoboMME (blog) ---------- -->
                 <tbody class="research-item highlight">
+                  <tr>
+                    <td class="research-img">
+                      <div class="img-hover-container video-teaser">
+                        <div class="static-img">
+                          <video src="images/astra/teaser.mp4" poster="images/astra/teaser.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Astra on RoboMME teaser: successful rollouts"></video>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="research-details">
+                      <a href="https://bingaochen.github.io/Astra-on-RoboMME/" target="_blank" rel="noopener noreferrer">
+                        <h3>Can Astra Solve RoboMME without Breaking the Bank?</h3>
+                      </a>
+                      <div class="authors">
+                        <strong>Bingao Chen</strong>, Haoquan Fang, C. Karen Liu
+                      </div>
+                      <div class="pub-info">
+                        <em><strong>Blog Post, 2026</strong></em>
+                      </div>
+                      <div class="links">
+                        <a href="https://bingaochen.github.io/Astra-on-RoboMME/" target="_blank" rel="noopener noreferrer"><i class="fas fa-pen-nib"></i> Blog</a>
+                        <a href="https://github.com/bingaochen/Astra-on-RoboMME" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i> Code</a>
+                      </div>
+                      <p>
+                        A three-tier system for memory-augmented manipulation: GPT-6 Astra plans
+                        grounded subtasks, a fine-tuned &pi;<sub>0.5</sub> executes them, and a small
+                        fine-tuned VLM monitors subtask completion to decide when to call Astra again.
+                        On 800 RoboMME test episodes, it reaches 79.13% success with only 3.63 Astra
+                        calls per episode, close to the 84.08% oracle-guided upper bound.
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+
+                <!-- ---------- tau0-VLA ---------- -->
+                <tbody class="research-item">
                   <tr>
                     <td class="research-img">
                       <!-- release-teaser 把图框的长宽比设成这张宽幅 teaser 的比例（见 stylesheet.css）。
@@ -163,12 +200,11 @@
                         <a href="https://tau0-vla.github.io/" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i> Project page</a>
                       </div>
                       <p>
-                        &tau;<sub>0</sub>-VLA is a hierarchical robot foundation model that treats
-                        high-level subtask generation as a compute-scalable inference problem: it
-                        proposes candidate subtasks, predicts their visual outcomes with a world model,
-                        and searches over the alternatives before committing. Trained on 40,115 hours
-                        of real-world data, it improves closed-loop success on long-horizon manipulation
-                        tasks spanning 13&ndash;25 steps.
+                        A hierarchical robot foundation model that treats high-level subtask
+                        generation as a compute-scalable inference problem: it proposes candidate
+                        subtasks, predicts their outcomes with a world model, and searches over them
+                        before committing. Trained on 40,115 hours of real-world data, it improves
+                        success on long-horizon manipulation tasks.
                       </p>
                     </td>
                   </tr>
