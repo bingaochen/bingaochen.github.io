@@ -19,17 +19,15 @@
   --highlight-bg: #f7f1ef;
   --shadow: 0 4px 14px rgba(60,40,38,0.09);
 
-  /* Adjusted scale factor */
-  --scale-factor: 0.85;
 }
 
 /* Center the entire page */
 .page-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
-  padding: 20px;
+  padding: 56px 24px 40px;
   box-sizing: border-box;
 }
 
@@ -37,17 +35,16 @@ body {
   background-color: var(--page-bg);
   color: var(--text-color);
   font-family: 'Open Sans', 'Lato', Verdana, Helvetica, sans-serif;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.65;
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 960px;
   width: 100%;
-  zoom: var(--scale-factor);
   margin: 0 auto;
 }
 
@@ -56,6 +53,10 @@ body {
   border-spacing: 0;
   border-collapse: separate;
   margin: 0 auto;
+}
+
+.main-table > tbody > tr > td {
+  padding: 0;
 }
 
 /* 去掉全局链接的下划线并使用自定义颜色 */
@@ -74,34 +75,39 @@ a:hover {
 /* Header Section */
 .header-table {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 44px;
+  border-spacing: 0;
+}
+
+.header-table > tbody > tr {
+  display: flex;
+  gap: 48px;
 }
 
 .profile-text {
-  padding: 2.5%;
-  width: 63%;
-  vertical-align: middle;
+  flex: 1;
+  min-width: 0;
+  padding: 0;
 }
 
 .profile-img {
-  padding: 2.5%;
-  width: 30%;
-  vertical-align: middle;
-  max-width: 40%;
+  flex: 0 0 240px;
+  padding: 76px 0 0;
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 700;
-  text-align: center;
-  margin: 10px 0 20px;
+  text-align: left;
+  margin: 0 0 22px;
   color: var(--heading-color);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
 }
 
 .profile-text p {
-  font-size: 16px;
-  margin-bottom: 20px;
+  font-size: 17px;
+  margin: 0 0 18px;
 }
 
 .img-container {
@@ -124,19 +130,17 @@ h1 {
 
 .social-links {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  width: fit-content;
-  gap: 10px;
-  text-align: center;
-  margin: 25px auto 0;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 8px;
+  margin: 24px 0 0;
 }
 
 .social-links a {
   display: inline-block;
   margin: 0;
-  padding: 7px 14px;
-  font-size: 14px;
+  padding: 8px 13px;
+  font-size: 15px;
   white-space: nowrap;
   background-color: transparent;
   border: 1px solid var(--border-color);
@@ -167,7 +171,7 @@ h1 {
 .section {
   position: relative;
   padding: 0 0 12px;
-  margin: 40px 0 20px;
+  margin: 44px 0 20px;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -182,7 +186,7 @@ h1 {
 }
 
 .section h2 {
-  font-size: 23px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--heading-color);
   margin: 0;
@@ -208,9 +212,12 @@ h1 {
 }
 
 .news-list li {
-  padding: 10px 0;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 16px;
+  padding: 12px 0;
   border-bottom: 1px solid var(--border-color);
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .news-list li:last-child {
@@ -221,16 +228,10 @@ h1 {
   display: inline-block;
   min-width: 72px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.01em;
   color: var(--primary-color);
-}
-
-.news-dot {
-  display: inline-block;
-  margin: 0 10px;
-  color: var(--border-color);
 }
 
 /* Misc Section */
@@ -283,7 +284,7 @@ h1 {
   max-width: 100% !important;
 }
 
-/* Research Section - Improved Image Hover Effect */
+/* Research Section */
 .research-table {
   width: 100%;
   margin-bottom: 30px;
@@ -319,74 +320,89 @@ h1 {
 }
 
 .research-img {
-  padding: 20px;
-  width: 30%;
-  vertical-align: middle;
+  box-sizing: border-box;
+  padding: 24px 20px;
+  width: 34%;
+  vertical-align: top;
 }
 
-.img-hover-container {
+.research-media {
+  margin: 0;
+}
+
+.teaser-frame {
   position: relative;
-  border-radius: 8px;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  box-shadow: none;
-  aspect-ratio: 230/165; /* Maintain original aspect ratio */
-  background: #ffffff;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid var(--border-color);
 }
 
-.img-hover-container:hover {
-  transform: none;
-}
-
-.img-hover-container .static-img,
-.img-hover-container .animated-img {
-  position: absolute;
-  top: 0;
-  left: 0;
+.teaser-frame video {
+  display: block;
   width: 100%;
   height: 100%;
-  transition: opacity 0.3s ease;
+  object-fit: contain;
+}
+
+.teaser-toggle {
+  position: absolute;
+  inset: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  padding: 10px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #fff;
+  font: inherit;
+  text-align: left;
 }
 
-.img-hover-container .static-img {
-  opacity: 1;
+.teaser-toggle[hidden] {
+  display: none;
 }
 
-.img-hover-container .animated-img {
+.teaser-toggle span {
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: rgba(38, 33, 33, 0.85);
+  font-size: 13px;
+  transition: opacity 0.2s;
+}
+
+.teaser-toggle[aria-pressed="true"] span {
   opacity: 0;
 }
 
-/* Only fade the static image out when there is actually an .animated-img
-   underneath to reveal. Without the :has() guard, hovering a card that has
-   no hover GIF fades the figure into the blank container background. */
-.img-hover-container:has(.animated-img):hover .static-img {
-  opacity: 0;
-}
-
-.img-hover-container:hover .animated-img {
+.teaser-toggle[aria-pressed="true"]:hover span,
+.teaser-toggle:focus-visible span {
   opacity: 1;
 }
 
-.img-hover-container img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* Fit original shape */
-  display: block;
+.teaser-toggle:focus-visible {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: -3px;
 }
 
-/* Wide teaser figures: match the image's own aspect ratio so nothing is letterboxed.
-   Current value = images/tau0/teaser.png (1400x667). */
-.release-teaser {
-  aspect-ratio: 1400/667;
-  background: #ffffff;
+.research-media figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted-color);
+}
+
+.research-media figcaption a {
+  display: inline-block;
+  margin-top: 4px;
 }
 
 .research-details {
-  padding: 20px;
-  width: 70%;
-  vertical-align: middle;
+  box-sizing: border-box;
+  padding: 24px 20px;
+  width: 66%;
+  vertical-align: top;
 }
 
 .badges {
@@ -405,19 +421,20 @@ h1 {
 }
 
 .research-details h3 {
-  font-size: 20px;
+  font-size: 21px;
+  line-height: 1.4;
   font-weight: 700;
   margin: 0 0 10px;
   color: var(--heading-color);
 }
 
-.research-details h3 a {
+.research-details > a h3 {
   color: var(--heading-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.research-details h3 a:hover {
+.research-details > a:hover h3 {
   color: var(--primary-color);
 }
 
@@ -432,7 +449,8 @@ h1 {
 }
 
 .pub-info {
-  margin: 10px 0;
+  margin: 8px 0;
+  font-size: 15px;
   font-style: italic;
   color: var(--muted-color);
 }
@@ -443,8 +461,9 @@ h1 {
 
 .links a {
   display: inline-block;
-  margin-right: 12px;
+  margin: 0 12px 4px 0;
   padding: 0;
+  font-size: 15px;
   background-color: transparent;
   color: var(--primary-color);
   text-decoration: none;
@@ -462,8 +481,8 @@ h1 {
 }
 
 .research-details p {
-  margin-top: 15px;
-  font-size: 15px;
+  margin: 12px 0 0;
+  font-size: 16px;
 }
 
 /* Experience Section - Simplified Logo */
@@ -474,8 +493,8 @@ h1 {
 }
 
 .logo-cell {
-  padding: 20px;
-  width: 20%;
+  padding: 16px 20px;
+  width: 16%;
   vertical-align: top;
 }
 
@@ -483,21 +502,22 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 120px; /* Increased height */
+  height: 104px;
   padding: 0;
   background: transparent;
   box-shadow: none;
 }
 
 .logo-container img {
-  max-height: 100px; /* Larger size */
+  max-height: 88px;
+  max-width: 100%;
   width: auto;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 .exp-details {
-  padding: 20px;
-  width: 80%;
+  padding: 16px 20px;
+  width: 84%;
   vertical-align: top;
 }
 
@@ -511,6 +531,8 @@ h1 {
 .exp-meta {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 16px;
   margin-bottom: 10px;
   color: var(--muted-color);
   font-size: 15px;
@@ -540,474 +562,154 @@ h1 {
   text-decoration: underline;
 }
 
-/* Responsive Design */
-@media (max-width: 1000px) and (min-width: 769px) {
-  .page-wrapper {
-    padding: 30px;
-  }
-  
-  .container {
-    transform: scale(0.95);
-  }
-}
-
-@media (max-width: 768px) and (min-width: 481px) {
-  .page-wrapper {
-    padding: 10px;
-  }
-}
-
+/* Responsive Design: reflow content rather than shrinking the page. */
 @media (max-width: 768px) {
-  
-  .container {
-    transform: scale(0.75);
-    transform-origin: top center;
-    width: 133.33%; /* Compensate for scale to maintain full width */
-  }
-  
-  .header-table {
-    display: table;
-    width: 100%;
-  }
-  
-  .profile-text {
-    width: 60%;
-    display: table-cell;
-    padding: 1.5% 10px;
-    vertical-align: middle;
-  }
-  
-  .profile-img {
-    width: 35%;
-    display: table-cell;
-    padding: 1.5% 10px;
-    vertical-align: middle;
-    max-width: 35%;
-  }
-  
-  h1 {
-    font-size: 26px;
-    margin: 3px 0 10px;
-  }
-  
-  .profile-text p {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  
-  .social-links {
-    margin-top: 10px;
-  }
-  
-  .social-links a {
-    margin: 0 5px;
-    padding: 5px 10px;
-    font-size: 13px;
-  }
-  
-  .social-links a i {
-    margin-right: 5px;
-    font-size: 13px;
-  }
-  
-  .section {
-    margin: 15px 0 10px;
-    padding: 8px 0;
-  }
-  
-  .section h2 {
-    font-size: 19px;
-  }
-  
-  .section h2 i {
-    margin-right: 8px;
-    font-size: 17px;
-  }
-  
-  .research-table {
-    display: table;
-    width: 100%;
-  }
-  
-  .research-table tbody.research-item > tr {
-    display: table-row;
-  }
-  
-  .research-img {
-    width: 45%;
-    display: table-cell;
-    padding: 8px;
-    vertical-align: middle;
-  }
-  
-  .research-details {
-    width: 55%;
-    display: table-cell;
-    padding: 8px;
-    vertical-align: middle;
-  }
-  
-  .img-hover-container {
-    max-width: 100%;
-    margin: 0;
-    transform: none;
+  .page-wrapper {
+    padding: 32px 20px;
   }
 
-  /* Keep research highlight subtle on mobile as well */
-  .research-table tbody.research-item.highlight td {
+  .header-table {
+    margin-bottom: 36px;
+  }
+
+  .header-table > tbody > tr {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .profile-text {
+    display: contents;
+  }
+
+  h1 {
+    order: 0;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .profile-img {
+    order: 1;
+    flex: none;
+    width: 180px;
+    padding: 0;
+    margin: 0 auto 24px;
+  }
+
+  .profile-text p {
+    order: 2;
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+
+  .social-links {
+    order: 3;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .social-links a {
+    font-size: 14px;
+  }
+
+  .section {
+    margin: 36px 0 16px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+
+  .news-list li {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .news-date {
+    min-width: 0;
+    font-size: 14px;
+  }
+
+  .research-table,
+  .research-table tbody.research-item,
+  .research-table tbody.research-item > tr {
+    display: block;
+  }
+
+  .research-table tbody.research-item {
+    margin-bottom: 24px;
+    border-bottom: 0;
+  }
+
+  .research-table tbody.research-item.highlight {
+    border-left: 3px solid var(--secondary-color);
     background: var(--highlight-bg);
   }
-  
-  .experience-table {
-    display: table;
+
+  .research-table tbody.research-item.highlight td:first-child {
+    border-left: 0;
+  }
+
+  .research-img,
+  .research-details {
+    display: block;
     width: 100%;
+    padding: 20px;
   }
-  
-  .experience-table tbody > tr {
-    display: table-row;
+
+  .research-img {
+    padding-bottom: 0;
   }
-  
-  .logo-cell {
-    width: 12%;
-    display: table-cell;
-    padding: 8px 10px;
-    vertical-align: middle;
+
+  .research-details {
+    padding-top: 16px;
   }
-  
-  .exp-details {
-    width: 88%;
-    display: table-cell;
-    padding: 8px 10px;
-    vertical-align: middle;
-  }
-  
-  .exp-meta {
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    font-size: 13px;
-  }
-  
-  .logo-container {
-    height: 100px;
-    width: 100%;
-    margin-bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .logo-container img {
-    max-height: 75px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-  }
-  
+
   .research-details h3 {
-    font-size: 17px;
-    margin: 0 0 6px;
+    font-size: 20px;
   }
-  
-  .authors {
-    font-size: 14px;
-    margin: 6px 0;
+
+  .logo-cell {
+    width: 72px;
+    padding: 16px 12px 16px 0;
   }
-  
-  .pub-info {
-    font-size: 14px;
-    margin: 6px 0;
+
+  .logo-container {
+    height: 72px;
   }
-  
-  .links {
-    margin: 10px 0;
+
+  .logo-container img {
+    max-height: 64px;
+    max-width: 64px;
   }
-  
-  .links a {
-    font-size: 14px;
-    margin-right: 8px;
+
+  .exp-details {
+    width: auto;
+    padding: 16px 0;
   }
-  
-  .research-details p {
-    font-size: 14px;
-    margin-top: 10px;
-  }
-  
-  .news-list li {
-    font-size: 14px;
-    padding: 5px 0;
-  }
-  
+
   .exp-details h3 {
-    font-size: 17px;
-    margin: 0 0 3px;
+    font-size: 19px;
   }
-  
-  .exp-details p {
-    font-size: 14px;
-    margin: 5px 0;
-  }
-  
-  .misc {
-    margin-bottom: 15px;
-  }
-  
-  .misc p {
-    font-size: 14px;
-  }
-  
-  .misc-bullets {
-    font-size: 14px;
-    padding-left: 15px;
-    margin: 0 0 15px;
-  }
-  
-  .misc-bullets li {
-    margin: 4px 0;
-  }
-  
-  .misc-subtitle {
+
+  .exp-meta {
     font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
   .page-wrapper {
-    padding: 0 !important;
-  }
-  
-  .container {
-    transform: scale(0.9);
-    transform-origin: top center;
-    width: 111.11%; /* Compensate for scale to maintain full width */
-  }
-  
-  .profile-text {
-    padding: 1% 8px;
-  }
-  
-  .profile-img {
-    padding: 1% 8px;
-  }
-  
-  .research-img {
-    padding: 8px;
-  }
-  
-  .research-details {
-    padding: 8px;
-  }
-  
-  .logo-cell {
-    padding: 8px;
-  }
-  
-  .exp-details {
-    padding: 8px;
-  }
-  
-  .section {
-    padding-left: 8px;
-    padding-right: 8px;
-    margin: 12px 0 8px;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding: 28px 18px;
   }
 
-  /* keep the accent tab aligned with the indented heading text */
-  .section::after {
-    left: 8px;
-    width: 44px;
-  }
-  
-  .news {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  
-  .misc {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  
-  .footer {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  
   h1 {
-    font-size: 24px;
-    margin: 3px 0 10px;
+    font-size: 30px;
   }
-  
-  .profile-text p {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  
-  .social-links {
-    margin-top: 10px;
-  }
-  
-  .social-links a {
-    margin: 0 4px;
-    padding: 5px 10px;
-    font-size: 13px;
-  }
-  
-  .social-links a i {
-    margin-right: 4px;
-    font-size: 13px;
-  }
-  
-  .section h2 {
-    font-size: 19px;
-  }
-  
-  .section h2 i {
-    margin-right: 6px;
-    font-size: 17px;
-  }
-  
-  .experience-table {
-    display: table;
-    width: 100%;
-  }
-  
-  .experience-table tbody > tr {
-    display: table-row;
-  }
-  
-  .logo-cell {
-    width: 12%;
-    display: table-cell;
-    padding: 6px 8px;
-    vertical-align: middle;
-  }
-  
-  .exp-details {
-    width: 88%;
-    display: table-cell;
-    padding: 6px 8px;
-    vertical-align: middle;
-  }
-  
-  .exp-meta {
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    font-size: 13px;
-  }
-  
-  .logo-container {
-    height: 90px;
-    width: 100%;
-    margin-bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .logo-container img {
-    max-height: 80px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-  }
-  
-  .research-table {
-    display: table;
-    width: 100%;
-  }
-  
-  .research-table tbody.research-item > tr {
-    display: table-row;
-  }
-  
-  .research-img {
-    width: 45%;
-    display: table-cell;
-    padding: 8px;
-    vertical-align: middle;
-  }
-  
+
+  .research-img,
   .research-details {
-    width: 55%;
-    display: table-cell;
-    padding: 8px;
-    vertical-align: middle;
-  }
-  
-  .img-hover-container {
-    max-width: 100%;
-    margin: 0;
-    transform: none;
-  }
-  
-  .research-details h3 {
-    font-size: 17px;
-    margin: 0 0 6px;
-  }
-  
-  .authors {
-    font-size: 14px;
-    margin: 6px 0;
-  }
-  
-  .pub-info {
-    font-size: 14px;
-    margin: 6px 0;
-  }
-  
-  .links {
-    margin: 10px 0;
-  }
-  
-  .links a {
-    font-size: 14px;
-    margin-right: 8px;
-  }
-  
-  .research-details p {
-    font-size: 14px;
-    margin-top: 10px;
-  }
-  
-  .news-list li {
-    font-size: 14px;
-    padding: 5px 0;
-  }
-  
-  .exp-details h3 {
-    font-size: 17px;
-    margin: 0 0 3px;
-  }
-  
-  .exp-details p {
-    font-size: 14px;
-    margin: 5px 0;
-  }
-  
-  .misc {
-    margin-bottom: 15px;
-  }
-  
-  .misc p {
-    font-size: 14px;
-  }
-  
-  .misc-bullets {
-    font-size: 14px;
-    padding-left: 15px;
-    margin: 0 0 15px;
-  }
-  
-  .misc-bullets li {
-    margin: 4px 0;
-  }
-  
-  .misc-subtitle {
-    font-size: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
@@ -1021,6 +723,8 @@ h1 {
 .highlight-note {
   color: var(--secondary-color);
   font-weight: 600;
+  padding: 8px 0 8px 16px;
+  border-left: 2px solid var(--secondary-color);
 }
 
 /* WeChat QR pop-up. Pure CSS via :target — no JavaScript.
