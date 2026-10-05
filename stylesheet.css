@@ -346,58 +346,6 @@ h1 {
   object-fit: contain;
 }
 
-.teaser-toggle {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: flex-end;
-  padding: 10px;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  color: #fff;
-  font: inherit;
-  text-align: left;
-}
-
-.teaser-toggle[hidden] {
-  display: none;
-}
-
-.teaser-toggle span {
-  padding: 5px 10px;
-  border-radius: 20px;
-  background: rgba(38, 33, 33, 0.85);
-  font-size: 13px;
-  transition: opacity 0.2s;
-}
-
-.teaser-toggle[aria-pressed="true"] span {
-  opacity: 0;
-}
-
-.teaser-toggle[aria-pressed="true"]:hover span,
-.teaser-toggle:focus-visible span {
-  opacity: 1;
-}
-
-.teaser-toggle:focus-visible {
-  outline: 3px solid var(--secondary-color);
-  outline-offset: -3px;
-}
-
-.research-media figcaption {
-  margin-top: 10px;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--muted-color);
-}
-
-.research-media figcaption a {
-  display: inline-block;
-  margin-top: 4px;
-}
-
 .research-details {
   box-sizing: border-box;
   padding: 24px 20px;
