@@ -348,6 +348,20 @@ h1 {
   object-fit: contain;
 }
 
+.teaser-poster {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.teaser-frame.has-frame .teaser-poster {
+  visibility: hidden;
+}
+
 .research-details {
   box-sizing: border-box;
   padding: 24px 20px;

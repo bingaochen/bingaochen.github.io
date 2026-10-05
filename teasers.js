@@ -11,6 +11,14 @@ teasers.forEach((video) => {
     video.play().catch((error) => console.warn('Unable to play teaser:', error));
   };
 
+  // Cover the initial decode/paint gap, then retain the video frame on pause.
+  video.addEventListener('playing', () => {
+    if (frame.classList.contains('has-frame')) return;
+    const reveal = () => requestAnimationFrame(() => frame.classList.add('has-frame'));
+    if (video.requestVideoFrameCallback) video.requestVideoFrameCallback(reveal);
+    else reveal();
+  });
+
   frame.addEventListener('pointerenter', (event) => {
     if (event.pointerType === 'mouse') play();
   });
