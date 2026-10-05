@@ -116,16 +116,9 @@ h1 {
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
-}
-
-.profile-email a {
   color: var(--muted-color);
   -webkit-user-select: text;
   user-select: text;
-}
-
-.profile-email a:hover {
-  color: var(--primary-color);
 }
 
 .img-container {
