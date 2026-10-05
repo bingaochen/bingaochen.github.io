@@ -537,11 +537,7 @@ h1 {
   }
 
   .profile-img {
-    order: 1;
-    flex: none;
-    width: 180px;
-    padding: 0;
-    margin: 0 auto 24px;
+    display: none;
   }
 
   .profile-text p {

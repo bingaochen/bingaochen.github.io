@@ -1,4 +1,4 @@
-// Play a silent preview only while the mouse is over a teaser.
+// Preview on mouse hover; tap the video to toggle playback.
 const teasers = [...document.querySelectorAll('.teaser-frame video')];
 
 teasers.forEach((video) => {
@@ -11,9 +11,18 @@ teasers.forEach((video) => {
     video.play().catch((error) => console.warn('Unable to play teaser:', error));
   };
 
-  frame.addEventListener('mouseenter', play);
+  frame.addEventListener('pointerenter', (event) => {
+    if (event.pointerType === 'mouse') play();
+  });
 
-  frame.addEventListener('mouseleave', () => video.pause());
+  frame.addEventListener('pointerleave', (event) => {
+    if (event.pointerType === 'mouse') video.pause();
+  });
+
+  frame.addEventListener('click', () => {
+    if (video.paused) play();
+    else video.pause();
+  });
 });
 
 const visibility = new IntersectionObserver((entries) => {
