@@ -1,24 +1,19 @@
 // Play a silent preview only while the mouse is over a teaser.
 const teasers = [...document.querySelectorAll('.teaser-frame video')];
-const hoverPreview = window.matchMedia('(hover: hover) and (pointer: fine)');
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 teasers.forEach((video) => {
   const frame = video.closest('.teaser-frame');
+  video.muted = true;
   const play = () => {
     teasers.forEach((other) => {
       if (other !== video) other.pause();
     });
-    video.play().catch(() => {});
+    video.play().catch((error) => console.warn('Unable to play teaser:', error));
   };
 
-  frame.addEventListener('pointerenter', (event) => {
-    if (event.pointerType === 'mouse' && hoverPreview.matches && !reducedMotion.matches) play();
-  });
+  frame.addEventListener('mouseenter', play);
 
-  frame.addEventListener('pointerleave', (event) => {
-    if (event.pointerType === 'mouse' && hoverPreview.matches) video.pause();
-  });
+  frame.addEventListener('mouseleave', () => video.pause());
 });
 
 const visibility = new IntersectionObserver((entries) => {
