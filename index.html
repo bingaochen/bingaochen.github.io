@@ -15,7 +15,7 @@
   <meta name="description" content="Bingao Chen is a senior undergraduate student at Tsinghua University, currently a visiting student at Stanford University. His research is in robot learning and agentic robotics.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="email=no">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20261005-email-text">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20261015-photo-align">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
@@ -112,6 +112,7 @@
               <div class="news">
                 <ul class="news-list">
                   <!-- 新的在最上面。加一条就复制一个 <li>。 -->
+                  <li><span class="news-date">2026.10</span><span class="news-text">👀 <strong><a href="https://tml.stanford.edu/FoveaVLA/" target="_blank" rel="noopener noreferrer">FoveaVLA</a></strong> is out! Paper, code, and models are all open-sourced.</span></li>
                   <li><span class="news-date">2026.09</span><span class="news-text">📝 New blog post: <strong><a href="https://bingaochen.github.io/Astra-on-RoboMME/" target="_blank" rel="noopener noreferrer">Can Astra Solve RoboMME without Breaking the Bank?</a></strong></span></li>
                   <li><span class="news-date">2026.07</span><span class="news-text">🛫 Our embodied foundation model <strong><a href="https://tau0-vla.github.io/" target="_blank" rel="noopener noreferrer">&tau;<sub>0</sub>-VLA</a></strong> has been released! Check out our long-horizon demos!</span></li>
                   <li><span class="news-date">2026.06</span><span class="news-text">🌲 I joined <strong><a href="https://tml.stanford.edu/" target="_blank" rel="noopener noreferrer">The Movement Lab</a></strong> at Stanford University as a visiting student. Many thanks to <a href="https://guytevet.github.io/" target="_blank" rel="noopener noreferrer">Guy</a> and <a href="https://profiles.stanford.edu/c-karen-liu" target="_blank" rel="noopener noreferrer">Karen</a> for the opportunity!</span></li>
@@ -133,8 +134,50 @@
 
               <table class="research-table">
 
-                <!-- ---------- Astra on RoboMME (blog) ---------- -->
+                <!-- ---------- FoveaVLA ---------- -->
                 <tbody class="research-item highlight">
+                  <tr>
+                    <td class="research-img">
+                      <figure class="research-media">
+                        <!-- 16-second loop from the project-page teaser (00:06.5–00:16.2, then 00:00–00:06.5). -->
+                        <div class="teaser-frame">
+                          <video id="foveavla-teaser" muted loop playsinline preload="metadata" poster="images/foveavla/teaser-poster.jpg" aria-label="FoveaVLA: the policy predicts where to look and receives a full-resolution crop">
+                            <source src="videos/foveavla-teaser.mp4" type="video/mp4">
+                          </video>
+                          <img class="teaser-poster" src="images/foveavla/teaser-poster.jpg" alt="" width="960" height="540">
+                        </div>
+                      </figure>
+                    </td>
+                    <td class="research-details">
+                      <a href="https://tml.stanford.edu/FoveaVLA/" target="_blank" rel="noopener noreferrer">
+                        <h3>FoveaVLA: Foveation Actions Replace the Wrist Camera in VLAs</h3>
+                      </a>
+                      <div class="authors">
+                        <strong>Bingao Chen</strong>, Lihan Zha, C. Karen Liu, Guy Tevet
+                      </div>
+                      <div class="pub-info">
+                        <em><strong>arXiv Preprint, 2026</strong></em>
+                      </div>
+                      <div class="links">
+                        <a href="https://arxiv.org/abs/2610.20064" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://github.com/Stanford-TML/FoveaVLA" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i> Code</a>
+                        <a href="https://huggingface.co/collections/bingaochen/foveavla" target="_blank" rel="noopener noreferrer"><i class="fas fa-cube"></i> Model</a>
+                        <a href="https://tml.stanford.edu/FoveaVLA/" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i> Project page</a>
+                      </div>
+                      <p>
+                        A vision-language-action model that replaces the wrist camera with a learned
+                        foveation action: alongside each action chunk, it predicts the region it will
+                        need to see next and crops it from the original-resolution external image.
+                        Trained only on public DROID data, with no camera calibration, it raises
+                        real-world success from 52.1% (&pi;<sub>0.5</sub> with a wrist camera) to
+                        70.8% with one external camera and 77.1% with two.
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+
+                <!-- ---------- Astra on RoboMME (blog) ---------- -->
+                <tbody class="research-item">
                   <tr>
                     <td class="research-img">
                       <figure class="research-media">
@@ -172,7 +215,7 @@
                 </tbody>
 
                 <!-- ---------- tau0-VLA ---------- -->
-                <tbody class="research-item">
+                <tbody class="research-item highlight">
                   <tr>
                     <td class="research-img">
                       <figure class="research-media">
