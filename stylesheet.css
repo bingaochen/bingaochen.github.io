@@ -330,6 +330,24 @@ h1 {
   border-left: 3px solid var(--secondary-color);
 }
 
+/* Two highlighted items in a row would merge into one panel. Open a gap
+   with a transparent top border; the accent edge is drawn as a background
+   strip here so it doesn't bleed into that gap at the corner. */
+@media (min-width: 769px) {
+  .research-table tbody.research-item.highlight + tbody.research-item.highlight td {
+    border-top: 16px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .research-table tbody.research-item.highlight + tbody.research-item.highlight td:first-child {
+    border-left: 0;
+    padding-left: 23px;
+    background:
+      linear-gradient(var(--secondary-color), var(--secondary-color)) 0 0 / 3px 100% no-repeat padding-box,
+      var(--highlight-bg) padding-box;
+  }
+}
+
 .research-img {
   box-sizing: border-box;
   padding: 24px 20px;
