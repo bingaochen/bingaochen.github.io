@@ -573,6 +573,10 @@ h1 {
     margin-bottom: 18px;
   }
 
+  .research-questions {
+    order: 2;
+  }
+
   .social-links {
     order: 3;
     justify-content: center;
@@ -764,4 +768,36 @@ h1 {
 
 .qr-dismiss:hover {
   color: var(--primary-color);
+}
+
+/* Research questions under the bio: "Label: question", then the
+   selected work on its own muted line. */
+.profile-text .research-lead {
+  margin-bottom: 10px;
+}
+
+.research-questions {
+  margin: 0 0 22px;
+  padding-left: 22px;
+  font-size: 17px;
+}
+
+.research-questions li {
+  margin: 0 0 12px;
+  padding-left: 2px;
+}
+
+.research-questions li::marker {
+  color: var(--muted-color);
+}
+
+.research-questions li:last-child {
+  margin-bottom: 0;
+}
+
+.rq-work {
+  display: block;
+  margin-top: 3px;
+  font-size: 15px;
+  color: var(--muted-color);
 }
