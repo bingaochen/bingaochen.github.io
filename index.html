@@ -130,6 +130,7 @@
               <div class="news">
                 <ul class="news-list">
                   <!-- 新的在最上面。加一条就复制一个 <li>。 -->
+                  <li><span class="news-date">2026.10</span><span class="news-text">🎉 <strong><a href="https://bingaochen.github.io/Astra-on-RoboMME/" target="_blank" rel="noopener noreferrer">Can Astra Solve RoboMME without Breaking the Bank?</a></strong> is accepted as a poster at the CoRL 2026 Workshop on Agentic Robotics!</span></li>
                   <li><span class="news-date">2026.10</span><span class="news-text">👀 <strong><a href="https://tml.stanford.edu/FoveaVLA/" target="_blank" rel="noopener noreferrer">FoveaVLA</a></strong> is out! Paper, code, and models are all open-sourced.</span></li>
                   <li><span class="news-date">2026.09</span><span class="news-text">📝 New blog post: <strong><a href="https://bingaochen.github.io/Astra-on-RoboMME/" target="_blank" rel="noopener noreferrer">Can Astra Solve RoboMME without Breaking the Bank?</a></strong></span></li>
                   <li><span class="news-date">2026.07</span><span class="news-text">🛫 Our embodied foundation model <strong><a href="https://tau0-vla.github.io/" target="_blank" rel="noopener noreferrer">&tau;<sub>0</sub>-VLA</a></strong> has been released! Check out our long-horizon demos!</span></li>
@@ -194,6 +195,44 @@
                   </tr>
                 </tbody>
 
+                <!-- ---------- Astra on RoboMME (blog) ---------- -->
+                <tbody class="research-item">
+                  <tr>
+                    <td class="research-img">
+                      <figure class="research-media">
+                        <div class="teaser-frame">
+                          <video id="astra-teaser" muted loop playsinline preload="metadata" poster="images/astra/teaser-poster.jpg" aria-label="Astra on RoboMME: memory-augmented manipulation teaser">
+                            <source src="videos/astra-teaser.mp4" type="video/mp4">
+                          </video>
+                          <img class="teaser-poster" src="images/astra/teaser-poster.jpg" alt="" width="960" height="540">
+                        </div>
+                      </figure>
+                    </td>
+                    <td class="research-details">
+                      <a href="https://bingaochen.github.io/Astra-on-RoboMME/" target="_blank" rel="noopener noreferrer">
+                        <h3>Can Astra Solve RoboMME without Breaking the Bank?</h3>
+                      </a>
+                      <div class="authors">
+                        <strong>Bingao Chen</strong>, Haoquan Fang, C. Karen Liu
+                      </div>
+                      <div class="pub-info">
+                        <em><strong>CoRL 2026 Workshop on Agentic Robotics</strong></em>
+                      </div>
+                      <div class="links">
+                        <a href="https://bingaochen.github.io/Astra-on-RoboMME/" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i> Blog</a>
+                        <a href="https://github.com/bingaochen/Astra-on-RoboMME" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i> Code</a>
+                      </div>
+                      <p>
+                        A three-tier system for memory-augmented manipulation: GPT-6 Astra plans
+                        grounded subtasks, a fine-tuned &pi;<sub>0.5</sub> executes them, and a small
+                        fine-tuned VLM monitors subtask completion to decide when to call Astra again.
+                        On 800 RoboMME test episodes, it reaches 79.13% success with only 3.63 Astra
+                        calls per episode, close to the 84.08% oracle-guided upper bound.
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+
                 <!-- ---------- Agentic Robots survey ---------- -->
                 <tbody class="research-item">
                   <tr>
@@ -226,44 +265,6 @@
                         path from task-specific policies through VLA models, world models, and
                         world-action models, then organizes the field into seventeen categories across
                         four domains: Model, Data, Environment, and Harness.
-                      </p>
-                    </td>
-                  </tr>
-                </tbody>
-
-                <!-- ---------- Astra on RoboMME (blog) ---------- -->
-                <tbody class="research-item">
-                  <tr>
-                    <td class="research-img">
-                      <figure class="research-media">
-                        <div class="teaser-frame">
-                          <video id="astra-teaser" muted loop playsinline preload="metadata" poster="images/astra/teaser-poster.jpg" aria-label="Astra on RoboMME: memory-augmented manipulation teaser">
-                            <source src="videos/astra-teaser.mp4" type="video/mp4">
-                          </video>
-                          <img class="teaser-poster" src="images/astra/teaser-poster.jpg" alt="" width="960" height="540">
-                        </div>
-                      </figure>
-                    </td>
-                    <td class="research-details">
-                      <a href="https://bingaochen.github.io/Astra-on-RoboMME/" target="_blank" rel="noopener noreferrer">
-                        <h3>Can Astra Solve RoboMME without Breaking the Bank?</h3>
-                      </a>
-                      <div class="authors">
-                        <strong>Bingao Chen</strong>, Haoquan Fang, C. Karen Liu
-                      </div>
-                      <div class="pub-info">
-                        <em><strong>Blog Post, 2026</strong></em>
-                      </div>
-                      <div class="links">
-                        <a href="https://bingaochen.github.io/Astra-on-RoboMME/" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i> Blog</a>
-                        <a href="https://github.com/bingaochen/Astra-on-RoboMME" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i> Code</a>
-                      </div>
-                      <p>
-                        A three-tier system for memory-augmented manipulation: GPT-6 Astra plans
-                        grounded subtasks, a fine-tuned &pi;<sub>0.5</sub> executes them, and a small
-                        fine-tuned VLM monitors subtask completion to decide when to call Astra again.
-                        On 800 RoboMME test episodes, it reaches 79.13% success with only 3.63 Astra
-                        calls per episode, close to the 84.08% oracle-guided upper bound.
                       </p>
                     </td>
                   </tr>
