@@ -441,6 +441,11 @@ h1 {
   font-weight: 700;
 }
 
+.authors sup {
+  font-size: 0.7em;
+  line-height: 0;
+}
+
 .pub-info {
   margin: 8px 0;
   font-size: 15px;
